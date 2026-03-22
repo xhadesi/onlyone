@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-pearl_pink: #F4D4D8;
+  --color-pearl_blue: #E0F2FE;
+  --color-dragon_red: #E11D48;
+  
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-playfair);
+  --font-accent: var(--font-cinzel);
+}
+
+:root {
+  --background: #F8FAFC; /* Softer, richer off-white */
+  --foreground: #020617; /* Slate 950 */
+}
+
+body {
+  /* Rich, non-pure-white pearly background */
+  background: radial-gradient(circle at top right, #fff1f2 0%, #f8fafc 50%, #eff6ff 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Strongly visible black borders as requested */
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.08), inset 0 2px 2px rgba(255, 255, 255, 1);
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-xl border border-white/50 shadow-sm rounded-3xl transition-all duration-500 hover:border-pearl_pink/50 hover:shadow-lg;
+  }
+}
