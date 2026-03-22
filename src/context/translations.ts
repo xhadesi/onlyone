@@ -1,6 +1,4 @@
-import { Language } from './translations_type'; // Assuming there is a type file or we can just define it inline.
-
-export type LanguageType = 'FR' | 'EN' | 'ES' | 'PT';
+export type Language = 'FR' | 'EN' | 'ES' | 'PT';
 
 export const translations = {
   FR: {
